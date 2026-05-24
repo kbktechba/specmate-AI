@@ -2,6 +2,12 @@ import { confluence } from "@/lib/mock-data";
 import Link from "next/link";
 import { ArrowLeft, Edit, Share2, Star } from "lucide-react";
 
+export async function generateStaticParams() {
+  return confluence.map((c) => ({
+    id: c.id,
+  }));
+}
+
 export default async function ConfluenceDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const doc = confluence.find(d => d.id === id);

@@ -2,6 +2,12 @@ import { servicenow } from "@/lib/mock-data";
 import Link from "next/link";
 import { ArrowLeft, Clock, Users, Activity } from "lucide-react";
 
+export async function generateStaticParams() {
+  return servicenow.map((s) => ({
+    id: s.id,
+  }));
+}
+
 export default async function ServiceNowDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const ticket = servicenow.find(t => t.id === id);

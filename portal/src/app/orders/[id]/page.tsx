@@ -2,6 +2,12 @@ import { orders } from "@/lib/mock-data";
 import Link from "next/link";
 import { ArrowLeft, Box, Calendar, Clock, MapPin, User, AlertCircle } from "lucide-react";
 
+export async function generateStaticParams() {
+  return orders.map((o) => ({
+    id: o.id,
+  }));
+}
+
 export default async function OrderDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const order = orders.find(o => o.id === id);

@@ -2,6 +2,12 @@ import { greenpoint } from "@/lib/mock-data";
 import Link from "next/link";
 import { ArrowLeft, Calendar, MapPin, Tag, CheckSquare } from "lucide-react";
 
+export async function generateStaticParams() {
+  return greenpoint.map((g) => ({
+    id: g.id,
+  }));
+}
+
 export default async function GreenPointDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const update = greenpoint.find(g => g.id === id);

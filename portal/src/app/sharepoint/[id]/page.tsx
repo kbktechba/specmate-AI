@@ -2,6 +2,12 @@ import { sharepoint } from "@/lib/mock-data";
 import Link from "next/link";
 import { ArrowLeft, FileText, CheckCircle2, AlertTriangle, Link as LinkIcon } from "lucide-react";
 
+export async function generateStaticParams() {
+  return sharepoint.map((s) => ({
+    id: s.id,
+  }));
+}
+
 export default async function SharePointDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const policy = sharepoint.find(p => p.id === id);
