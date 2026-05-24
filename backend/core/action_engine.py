@@ -2,6 +2,9 @@ from core.intent_router import IntentRouter
 from core.ai_composer import AIResponseComposer
 from services.data_services import OrdersService, PoliciesService, KnowledgeBaseService, GreenPointService, ServiceNowService
 from services.ticket_service import TicketService
+import os
+
+PORTAL_URL = os.getenv("PORTAL_URL", "http://localhost:3001")
 
 class ActionEngine:
     def __init__(self):
