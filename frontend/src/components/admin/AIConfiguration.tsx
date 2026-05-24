@@ -92,7 +92,7 @@ export function AIConfiguration() {
               <div className="flex justify-between">
                 <label className="text-sm font-medium">Confidence Threshold: {confidence[0]}%</label>
               </div>
-              <Slider value={confidence} onValueChange={setConfidence} max={100} step={1} />
+              <Slider value={confidence} onValueChange={(value) => setConfidence(Array.isArray(value) ? [...value] : [value])} max={100} step={1} />
             </div>
             
             <div className="flex items-center justify-between pt-4 border-t border-gray-100">
