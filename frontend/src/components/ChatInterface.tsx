@@ -167,13 +167,12 @@ export function ChatInterface() {
     <div className="flex flex-col h-full w-full">
       {/* Top Header */}
       <div className="flex items-center justify-between p-6 pb-2">
-        <a href="/" className="flex flex-col cursor-pointer hover:opacity-90 transition-opacity" title="Refresh Homepage">
-          <svg width="140" height="44" viewBox="0 0 140 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="38" cy="22" rx="36" ry="22" fill="#007749" />
-            <ellipse cx="102" cy="22" rx="36" ry="22" fill="#007749" />
-            <text x="70" y="30" fontFamily="system-ui, -apple-system, sans-serif" fontSize="22" fontWeight="600" fill="white" textAnchor="middle" letterSpacing="-0.5">SpecMate</text>
+        <a href="/" className="flex flex-col cursor-pointer hover:opacity-80 transition-opacity" title="Refresh Homepage">
+          <svg width="146" height="46" viewBox="0 0 146 46" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm">
+            <ellipse cx="40" cy="23" rx="40" ry="23" fill="#007749" />
+            <ellipse cx="106" cy="23" rx="40" ry="23" fill="#007749" />
+            <text x="73" y="32" fontFamily="system-ui, -apple-system, sans-serif" fontSize="24" fontWeight="800" fill="white" textAnchor="middle" letterSpacing="-0.5">SpecMate</text>
           </svg>
-          <p className="text-[10px] text-muted-foreground mt-1 ml-2 font-medium tracking-wide">RETAIL ASSISTANT</p>
         </a>
         <div className="flex items-center gap-4 text-muted-foreground">
           <Link href="/admin" className="flex items-center gap-2 hover:text-foreground transition-colors text-sm font-medium pr-2 border-r border-border/50">
