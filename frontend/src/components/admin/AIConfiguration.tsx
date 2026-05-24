@@ -85,7 +85,7 @@ export function AIConfiguration() {
               <div className="flex justify-between">
                 <label className="text-sm font-medium">Retrieval Top-K: {topK[0]}</label>
               </div>
-              <Slider value={topK} onValueChange={setTopK} max={20} step={1} />
+              <Slider value={topK} onValueChange={(value) => setTopK(Array.isArray(value) ? [...value] : [value])} max={20} step={1} />
             </div>
 
             <div className="space-y-3">
