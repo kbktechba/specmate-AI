@@ -56,7 +56,13 @@ export function AIConfiguration() {
               <div className="flex justify-between">
                 <label className="text-sm font-medium">Temperature: {temperature[0]}</label>
               </div>
-              <Slider value={temperature} onValueChange={setTemperature} max={1} step={0.1} />
+	      <Slider 
+		value={temperature} 
+		onValueChange={(value) => setTemperature(Array.isArray(value) ? [...value] : [value])} 
+		max={1} 
+		step={0.1} 
+	      />
+             
             </div>
 
             <div className="space-y-3">
