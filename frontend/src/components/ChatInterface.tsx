@@ -50,6 +50,9 @@ export function ChatInterface() {
 
   useEffect(() => {
     setMounted(true);
+    // Ping backend to wake up Render container (Cold Start mitigation)
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+    fetch(`${API_URL}/health`).catch(() => {});
   }, []);
 
   useEffect(() => {
